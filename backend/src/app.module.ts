@@ -9,6 +9,7 @@ import { VisitasModule } from './visitas/visitas.module';
 import { FotosModule } from './fotos/fotos.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { AuthModule } from './auth/auth.module';
+import { AuditoriaModule } from './auditoria/auditoria.module';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -30,6 +31,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     FotosModule,
     UsuariosModule,
     AuthModule,
+    AuditoriaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
