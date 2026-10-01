@@ -1,0 +1,429 @@
+:root {
+  /* =====================================================
+     PALETA ABADEUS
+     ===================================================== */
+
+  --abadeus-vermelho: #cc464d;
+  --abadeus-azul: #296589;
+  --abadeus-roxo: #615ca5;
+  --abadeus-cinza: #58595b;
+  --abadeus-laranja: #f29422;
+  --abadeus-laranja-claro: #ea9b4b;
+  --abadeus-amarelo: #ffbd59;
+  --abadeus-bege: #ebe1d7;
+
+  --abadeus-branco: #ffffff;
+  --abadeus-fundo: #f7f3ef;
+  --abadeus-texto: #343538;
+  --abadeus-texto-suave: #737477;
+
+  /* =====================================================
+     BORDAS
+     ===================================================== */
+
+  --abadeus-borda: rgba(88, 89, 91, 0.14);
+  --abadeus-borda-forte: rgba(88, 89, 91, 0.24);
+
+  /* =====================================================
+     SOMBRAS
+     ===================================================== */
+
+  --abadeus-sombra-suave:
+    0 4px 20px rgba(88, 89, 91, 0.08);
+
+  --abadeus-sombra-card:
+    0 10px 30px rgba(88, 89, 91, 0.1);
+
+  --abadeus-sombra-destaque:
+    0 12px 30px rgba(41, 101, 137, 0.2);
+
+  /* =====================================================
+     BORDAS ARREDONDADAS
+     ===================================================== */
+
+  --abadeus-radius-sm: 8px;
+  --abadeus-radius-md: 14px;
+  --abadeus-radius-lg: 22px;
+  --abadeus-radius-xl: 30px;
+}
+
+/* =========================================================
+   FUNDO INSTITUCIONAL
+   ========================================================= */
+
+.abadeus-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--abadeus-fundo);
+}
+
+/* =========================================================
+   TEXTURA GRANULADA
+   ========================================================= */
+
+.abadeus-textura {
+  position: relative;
+}
+
+.abadeus-textura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   ELEMENTOS DECORATIVOS
+   ========================================================= */
+
+.abadeus-estrela {
+  color: var(--abadeus-amarelo);
+  line-height: 1;
+  user-select: none;
+}
+
+.abadeus-estrela-vermelha {
+  color: var(--abadeus-vermelho);
+}
+
+.abadeus-estrela-laranja {
+  color: var(--abadeus-laranja);
+}
+
+.abadeus-estrela-roxa {
+  color: var(--abadeus-roxo);
+}
+
+.abadeus-pontilhado {
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(88, 89, 91, 0.45) 1.2px,
+      transparent 1.2px
+    );
+
+  background-size: 9px 9px;
+}
+
+.abadeus-linha-pontilhada {
+  border-top: 2px dashed rgba(88, 89, 91, 0.25);
+}
+
+.abadeus-linha-pontilhada-clara {
+  border-top: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================
+   CORES DE FUNDO
+   ========================================================= */
+
+.abadeus-bg-azul {
+  background-color: var(--abadeus-azul);
+}
+
+.abadeus-bg-vermelho {
+  background-color: var(--abadeus-vermelho);
+}
+
+.abadeus-bg-roxo {
+  background-color: var(--abadeus-roxo);
+}
+
+.abadeus-bg-laranja {
+  background-color: var(--abadeus-laranja);
+}
+
+.abadeus-bg-amarelo {
+  background-color: var(--abadeus-amarelo);
+}
+
+.abadeus-bg-bege {
+  background-color: var(--abadeus-bege);
+}
+
+.abadeus-bg-branco {
+  background-color: var(--abadeus-branco);
+}
+
+/* =========================================================
+   CORES DE TEXTO
+   ========================================================= */
+
+.abadeus-texto-azul {
+  color: var(--abadeus-azul);
+}
+
+.abadeus-texto-vermelho {
+  color: var(--abadeus-vermelho);
+}
+
+.abadeus-texto-roxo {
+  color: var(--abadeus-roxo);
+}
+
+.abadeus-texto-laranja {
+  color: var(--abadeus-laranja);
+}
+
+.abadeus-texto-cinza {
+  color: var(--abadeus-cinza);
+}
+
+.abadeus-texto-amarelo {
+  color: var(--abadeus-amarelo);
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.abadeus-card {
+  background: var(--abadeus-branco);
+  border: 1px solid var(--abadeus-borda);
+  border-radius: var(--abadeus-radius-lg);
+  box-shadow: var(--abadeus-sombra-card);
+}
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+   ========================================================= */
+
+.abadeus-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: var(--abadeus-radius-md);
+
+  padding: 15px 22px;
+
+  background: var(--abadeus-azul);
+  color: var(--abadeus-branco);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.abadeus-button:hover {
+  transform: translateY(-2px);
+
+  background: #235875;
+
+  box-shadow: var(--abadeus-sombra-destaque);
+}
+
+.abadeus-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   BOTÃO SECUNDÁRIO
+   ========================================================= */
+
+.abadeus-button-outline {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--abadeus-azul);
+  border-radius: var(--abadeus-radius-md);
+
+  padding: 14px 22px;
+
+  background: transparent;
+  color: var(--abadeus-azul);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.abadeus-button-outline:hover {
+  transform: translateY(-2px);
+
+  background: var(--abadeus-azul);
+  color: var(--abadeus-branco);
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.abadeus-input {
+  width: 100%;
+
+  border: 1px solid var(--abadeus-borda-forte);
+  border-radius: var(--abadeus-radius-md);
+
+  padding: 13px 15px;
+
+  background: var(--abadeus-branco);
+  color: var(--abadeus-texto);
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.abadeus-input::placeholder {
+  color: var(--abadeus-texto-suave);
+  opacity: 0.65;
+}
+
+.abadeus-input:focus {
+  border-color: var(--abadeus-azul);
+
+  box-shadow:
+    0 0 0 3px rgba(41, 101, 137, 0.12);
+}
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.abadeus-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--abadeus-cinza);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.abadeus-badge-azul {
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: 999px;
+
+  padding: 5px 10px;
+
+  background: rgba(41, 101, 137, 0.1);
+  color: var(--abadeus-azul);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.abadeus-badge-vermelho {
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: 999px;
+
+  padding: 5px 10px;
+
+  background: rgba(204, 70, 77, 0.1);
+  color: var(--abadeus-vermelho);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.abadeus-badge-laranja {
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: 999px;
+
+  padding: 5px 10px;
+
+  background: rgba(242, 148, 34, 0.12);
+  color: #b86600;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.abadeus-badge-roxo {
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: 999px;
+
+  padding: 5px 10px;
+
+  background: rgba(97, 92, 165, 0.1);
+  color: var(--abadeus-roxo);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+@keyframes abadeus-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.abadeus-aparecer {
+  animation: abadeus-aparecer 0.35s ease-out;
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+.abadeus-button:focus-visible,
+.abadeus-button-outline:focus-visible,
+.abadeus-input:focus-visible {
+  outline: 3px solid rgba(242, 148, 34, 0.45);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .abadeus-button,
+  .abadeus-button-outline,
+  .abadeus-input {
+    transition: none;
+  }
+
+  .abadeus-aparecer {
+    animation: none;
+  }
+}

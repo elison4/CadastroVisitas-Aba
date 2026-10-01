@@ -1,17 +1,24 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { createObserveModule } from '@nestjs/observe';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { PrismaModule } from './prisma/prisma.module';
-import { VisitantesModule } from './visitantes/visitantes.module';
-import { VisitasModule } from './visitas/visitas.module';
-import { FotosModule } from './fotos/fotos.module';
-import { UsuariosModule } from './usuarios/usuarios.module';
-import { AuthModule } from './auth/auth.module';
-import { AuditoriaModule } from './auditoria/auditoria.module';
+import { Module } from '@nestjs/common'
+import { ConfigModule } from '@nestjs/config'
+import { createObserveModule } from '@nestjs/observe'
 
-export const { ObserveModule, ObserveInstrument } = createObserveModule();
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
+
+import { PrismaModule } from './prisma/prisma.module'
+import { VisitantesModule } from './visitantes/visitantes.module'
+import { VisitasModule } from './visitas/visitas.module'
+import { FotosModule } from './fotos/fotos.module'
+import { UsuariosModule } from './usuarios/usuarios.module'
+import { AuthModule } from './auth/auth.module'
+import { AuditoriaModule } from './auditoria/auditoria.module'
+import { AutoCadastroModule } from './autocadastro/auto-cadastro.module'
+import { BuscaPublicaModule } from './busca-publica/busca-publica.module'
+
+export const {
+  ObserveModule,
+  ObserveInstrument,
+} = createObserveModule()
 
 @Module({
   imports: [
@@ -32,9 +39,11 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     UsuariosModule,
     AuthModule,
     AuditoriaModule,
+    AutoCadastroModule,
+    BuscaPublicaModule,
   ],
+
   controllers: [AppController],
   providers: [AppService],
-  
 })
 export class AppModule {}

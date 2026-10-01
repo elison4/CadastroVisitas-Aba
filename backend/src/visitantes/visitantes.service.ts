@@ -52,4 +52,38 @@ export class VisitantesService {
       id: Number(visitante.id),
     };
   }
+  async buscar(valor: string) {
+  const termo = valor.trim()
+
+  if (!termo) {
+    return []
+  }
+
+  return this.prisma.visitantes.findMany({
+    where: {
+      OR: [
+        {
+          nome_completo: {
+            contains: termo,
+            mode: 'insensitive',
+          },
+        },
+        {
+          email: {
+            contains: termo,
+            mode: 'insensitive',
+          },
+        },
+        {
+          telefone: {
+            contains: termo,
+          },
+        },
+      ],
+    },
+    orderBy: {
+      nome_completo: 'asc',
+    },
+  })
+}
 }
